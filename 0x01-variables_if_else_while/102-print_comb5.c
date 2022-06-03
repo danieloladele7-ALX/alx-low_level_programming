@@ -6,8 +6,9 @@
  */
 int main(void)
 {
-	for (int i = 0; i <= 99; i++)
-		for (int j = 0; j <= 99; j++)
+	int i, j;
+	for (i = 0; i <= 99; i++)
+		for (j = 0; j <= 99; j++)
 			if (i < j && i != j)
 			{
 				putchar((i / 10) + '0');

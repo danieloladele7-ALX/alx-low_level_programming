@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - Prints all alphabet except q and e.
- * 
+ *
  * Return: 0 on success
  */
 int main(void)
@@ -10,7 +10,7 @@ int main(void)
 
 	while (c <= 'z')
 	{
-		if(c != 'q' && c != 'e')
+		if (c != 'q' && c != 'e')
 			putchar(c);
 		c++;
 	}

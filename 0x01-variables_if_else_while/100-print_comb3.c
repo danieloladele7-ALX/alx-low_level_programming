@@ -6,9 +6,10 @@
  */
 int main(void)
 {
-	for (int n = 0 ; n < 9 ; n++)
+	int n, i;
+	for (n = 0 ; n < 9 ; n++)
 	{
-		int i = n + 1;
+		i = n + 1;
 		do
 		{
 			putchar('0' + n);
