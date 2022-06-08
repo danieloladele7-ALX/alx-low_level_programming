@@ -1,15 +1,12 @@
+#include <unistd.h>
 #include "main.h"
-
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	char *ptr = "_putchar";
-
-	while (*ptr)
-	{
-		_putchar(*ptr);
-		ptr++;
-	}
-	_putchar("\n");
-
-	return (0);
+  write(1, "_putchar\n", '\n');
+  return (0);
 }
