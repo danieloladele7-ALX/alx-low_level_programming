@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - Prints _putchar
  * 
@@ -6,7 +6,14 @@
  */
 int main(void)
 {
-	printf("_putchar\n");
-
-	return 0;
+	char *ptr = "_putchar";
+	
+	while (*ptr)
+	{
+		_putchar(*ptr);
+		ptr++;
+	}
+	_putchar("\n");
+	
+	return (0);
 }
