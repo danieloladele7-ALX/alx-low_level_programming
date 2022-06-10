@@ -7,16 +7,17 @@
  */
 void print_number(int n)
 {
-	long l; /* power of 10 */
+	int l; /* power of 10 */
 	int c; /* boolean check */
-	long num; /* convert int to long */
+	int num; /* convert int to long */
+	char hyphen = 45;
 
 	num = n;
 	/* negatives */
 	if (num < 0)
 	{
 		num *= -1;
-		_putchar('-');
+		_putchar(hyphen);
 	}
 
 	/* count up */
