@@ -7,10 +7,10 @@
  */
 int _atoi(char *s)
 {
-	int i, temp, j, neg; /* j =temp, n = j, m = neg*/
+	int i, temp, j, neg;
 
 	i = j = 0;
-	k = 1;
+	neg = 1;
 	while ((*(s + i) < '0' || *(s + i) > '9') && (*(s + i) != '\0'))
 	{
 		if (*(s + i) == '-')
