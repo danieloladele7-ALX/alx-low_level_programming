@@ -8,22 +8,18 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int dest_size;
-	int it;
+	int des_size, it;
 
-	dest_size = 0;
-
-	while (dest[dest_size] != 0)
+	des_size = it = 0;
+	/* record dest length*/
+	while (*(dest + des_size))
 	{
-		dest_size++;
+		des_size++;
 	}
-
-	it = 0;
-
-	while (src[it] != 0)
+	/* form dest last, while src has not been exhausted */
+	while ((*(dest + des_size) = *(src + it)))
 	{
-		dest[dest_size] = src[it]; /* Set end of dest to beg of src */
-		dest_size++;
+		des_size++;
 		it++;
 	}
 	return (dest);
