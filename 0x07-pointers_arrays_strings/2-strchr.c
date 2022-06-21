@@ -4,18 +4,18 @@
  * @s: string to check
  * @c: character to check for
  *
- * Return: pointer to the spot where c is or a null value
+ * Return: pointer to the spot where c is or a null
  */
 char *_strchr(char *s, char c)
 {
-	int i;
-
-	for (i = 0; *s != '\0'; i++)
+	while (*s != '\0')
 	{
-		if (*(s + i) == c)
-			return (s + i);
+		if (*s == c)
+			return (s);
+		s++;
 	}
-	if (*(s + i) == c)
-		return (s + i);
-	return (0);
+	if (*s == c)
+		return (s);
+	else
+		return (0);
 }
