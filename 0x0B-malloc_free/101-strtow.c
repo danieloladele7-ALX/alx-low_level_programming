@@ -1,13 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-
-/**
- * strtow - concatenates all the arguments of your program
- *@str: string
- *@av: arguments
- * Return: a pointer to a new string
- */
+#include <stdio.h>
 /**
  * number - function to calculate number of words
  * @str: string being passed to check for words
