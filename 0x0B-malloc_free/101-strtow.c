@@ -50,15 +50,12 @@ void free_everything(char **string, int i)
  */
 char **strtow(char *str)
 {
-	int total_words = 0, b = 0, c = 0, length = 0;
+	int total_words = number(str), b = 0, c = 0, length = 0;
 	char **words, *found_word;
 
-	if (str == 0 || *str == 0)
+	if (str == 0 || *str == 0 || total_words == 0)
 		return (NULL);
-	total_words = number(str);
-	if (total_words == 0)
-		return (NULL);
-	words = malloc((total_words + 1) * sizeof(char *));
+	words = (char **) malloc((total_words + 1) * sizeof(char *));
 	if (words == 0)
 		return (NULL);
 	for (; *str != '\0' &&  b < total_words;)
@@ -68,22 +65,18 @@ char **strtow(char *str)
 		else
 		{
 			found_word = str;
-			for (; *str != ' ' && *str != '\0';)
-			{
+			for (; *str != ' ' && *str != '\0'; str++)
 				length++;
-				str++;
-			}
-			words[b] = malloc((length + 1) * sizeof(char));
+			words[b] = (char *) malloc((length + 1) * sizeof(char));
 			if (words[b] == 0)
 			{
 				free_everything(words, b);
 				return (NULL);
 			}
-			while (*found_word != ' ' && *found_word != '\0')
+			for (; *found_word != ' ' && *found_word != '\0'; c++)
 			{
 				words[b][c] = *found_word;
 				found_word++;
-				c++;
 			}
 			words[b][c] = '\0';
 			b++;
