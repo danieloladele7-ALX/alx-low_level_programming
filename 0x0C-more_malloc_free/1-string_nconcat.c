@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 /**
  * string_nconcat - concatenates two strings.
  * @s1: first string to copy
@@ -10,7 +9,8 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int length = n, i;
+	char *concat;
+	unsigned int len = n, index;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -18,23 +18,23 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	for (i = 0; s1[i]; i++)
-		length++;
+	for (index = 0; s1[index]; index++)
+		len++;
 
-	char *newstr = malloc(sizeof(char) * (length + 1));
+	concat = malloc(sizeof(char) * (len + 1));
 
-	if (newstr == NULL)
+	if (concat == NULL)
 		return (NULL);
-	/* reset length */
-	length = 0;
 
-	for (i = 0; s1[i]; i++)
-		newstr[length++] = s1[i];
+	len = 0;
 
-	for (i = 0; s2[i] && i < n; i++)
-		newstr[length++] = s2[i];
+	for (index = 0; s1[index]; index++)
+		concat[len++] = s1[index];
 
-	newstr[length] = '\0';
+	for (index = 0; s2[index] && index < n; index++)
+		concat[len++] = s2[index];
 
-	return (newstr);
+	concat[len] = '\0';
+
+	return (concat);
 }
