@@ -8,12 +8,13 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t node;
+	size_t num = 0;
 	long int diff;
 
-	for (node = 0; head; node++)
+	while (head)
 	{
 		diff = head - head->next;
+		num++;
 		printf("[%p] %d\n", (void *)head, head->n);
 		if (diff > 0)
 			head = head->next;
@@ -24,5 +25,5 @@ size_t print_listint_safe(const listint_t *head)
 		}
 	}
 
-	return (node);
+	return (num);
 }
