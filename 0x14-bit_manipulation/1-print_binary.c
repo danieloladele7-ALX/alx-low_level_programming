@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
  * print_binary - prints the binary equivalent of a decimal number
@@ -17,12 +17,12 @@ void print_binary(unsigned long int n)
 
 		if (temp & 1)
 		{
-			putchar('1');
+			_putchar('1');
 			num++;
 		}
 		else if (num)
-			putchar('0');
+			_putchar('0');
 	}
 	if (!num)
-		putchar('0');
+		_putchar('0');
 }
