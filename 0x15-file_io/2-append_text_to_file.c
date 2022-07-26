@@ -1,15 +1,15 @@
 #include "main.h"
 /**
- * create_file - creates a file and fills it with text
- * @filename: name of the file to create
- * @text_content: text to write in the file
+ * append_text_to_file - appends text at the end of a file
+ * @filename: file to append the text to
+ * @text_content: content to append into the file
  *
- * Return: 1 on success, -1 on failure
+ * Return: 1 on success and -1 on failure
  */
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd;
-	ssize_t str_len, len_write;
+	ssize_t len_write, str_len;
 
 	if (!filename)
 		return (-1);
@@ -23,11 +23,11 @@ int create_file(const char *filename, char *text_content)
 		/* get string length  */
 		for (str_len = 0 ; text_content[str_len]; str_len++)
 			;
-		/* write text to file */
 		len_write = write(fd, text_content, str_len);
 		if (len_write != str_len)
 			return (-1);
 	}
+
 	close(fd);
 
 	return (1);
