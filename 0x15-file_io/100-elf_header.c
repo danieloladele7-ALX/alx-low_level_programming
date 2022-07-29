@@ -63,7 +63,7 @@ void elf_version(unsigned char *e_version)
 {
 	printf("  Version:                           %d", e_version[EI_VERSION]);
 
-	if (e_version[EI_VERSION] == 2)
+	if (e_version[EI_VERSION] == EV_CURRENT)
 		printf(" (current)\n");
 	else
 		printf("\n");
