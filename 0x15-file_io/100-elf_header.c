@@ -26,7 +26,7 @@ void elf_indent(unsigned char *e_ident)
 		}
 	}
 	/* Print Magic Numbers */
-	printf("  Magic:   ");
+	printf("ELF Header:\n  Magic:   ");
 	for (idx = 0; idx < EI_NIDENT; idx++)
 	{
 		printf("%02x", e_ident[idx]);
