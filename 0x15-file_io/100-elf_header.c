@@ -63,7 +63,7 @@ void elf_version(unsigned char *e_version)
 {
 	printf("  Version:                           %d", e_version[EI_VERSION]);
 
-	if (e_version[EI_VERSION] == EV_CURRENT)
+	if (e_version[EI_VERSION] == 2)
 		printf(" (current)\n");
 	else
 		printf("\n");
@@ -163,11 +163,9 @@ void elf_entry(unsigned long int entry, unsigned char *class)
 
 	if (class[EI_DATA] == ELFDATA2MSB)
 	{
-		entry = ((entry << 8) & 0xFF00FF00) |
-			  ((entry >> 8) & 0xFF00FF);
+		entry = ((entry << 8) & 0xFF00FF00) | ((entry >> 8) & 0xFF00FF);
 		entry = (entry << 16) | (entry >> 16);
 	}
-
 	if (class[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)entry);
 
