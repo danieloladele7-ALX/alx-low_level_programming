@@ -1,1 +1,0 @@
-# Hash Tables Low level Programming
